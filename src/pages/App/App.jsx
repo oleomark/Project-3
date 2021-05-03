@@ -1,14 +1,9 @@
 import { useState } from 'react';
-import { render } from 'react-dom';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
-import NewOrderPage from '../NewOrderPage/NewOrderPage';
-import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
 import NavBar from '../../components/NavBar/NavBar';
 import './App.css';
-// import Calendar from 'react-calendar'
-// import 'react-calendar/dist/Calendar.css';
 import InfiniteCalendar from 'react-infinite-calendar';
 import 'react-infinite-calendar/styles.css';
 
@@ -27,21 +22,18 @@ var lastWeek = new Date(today.getFullYear(), today.getMonth(), today.getDate() -
 					<Switch>
 						<Route exact path='/'>
 							<InfiniteCalendar 
-							width={400}
-							height={600}
+							width={800}
+							height={400}
 							selected={today}
-							disabledDays={[0,6]}
 							minDate={lastWeek}
 							/>
 							{/* <Calendar /> */}
 						</Route>
-						<Route path='/orders/new'>
-							<NewOrderPage />
+						{/* <Route path='/orders/new'>
 						</Route>
 						<Route path='/orders'>
-							<OrderHistoryPage />
-						</Route>
-						<Redirect to='/orders' />
+						</Route> */}
+						<Redirect to='/' />
 					</Switch>
 				</>
 			) : (
