@@ -1,12 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
-import DateTimePicker from 'react-datetime-picker';
+// import DateTimePicker from 'react-datetime-picker';
 
-export default function AddTaskForm({ props }){
+export default function AddTaskForm(props){
   const [invalidForm, setValidForm] = useState(true);
   const [formData, setFormData] = useState({
     title: '',
     description: '',
-    // due_at: '0',
   })
 
   const formRef = useRef();
@@ -36,7 +35,7 @@ export default function AddTaskForm({ props }){
           <input
             className="form-control"
             name="title"
-            // value={ formData.title }
+            value={ formData.title }
             onChange={handleChange}
             required
           />
@@ -46,12 +45,12 @@ export default function AddTaskForm({ props }){
           <input
             className="form-control"
             name="description"
-            // value={ formData.description }
+            value={ formData.description }
             onChange={handleChange}
             required
           />
         </div>
-        <div>
+        {/* <div>
         <label>Date (required)</label>
         <input type="date" id="start" name="trip-start"
        value="2018-07-22"
@@ -67,7 +66,7 @@ export default function AddTaskForm({ props }){
         <div>
           <label>Select Day and Time</label>
           <DateTimePicker />
-        </div>
+        </div> */}
         <button
           type="submit"
           className="btn"
