@@ -6,7 +6,6 @@ export default function AddTaskForm({ props }){
   const [formData, setFormData] = useState({
     title: '',
     description: '',
-    // due_at: '0',
   })
 
   const formRef = useRef();

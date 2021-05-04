@@ -1,12 +1,12 @@
 import React, {useState, useEffect, useRef} from 'react';
 import {Link, useLocation} from 'react-router-dom';
 
-export default function EditTaskPage(props){
+export default function EditTaskPage({props}){
 
   const location = useLocation()
 
   const [invalidForm, setValidForm] = useState(true);
-  const [formData, setFormData] = useState(location.state.puppy)
+  const [formData, setFormData] = useState(location.state.task)
   
   const formRef = useRef();
 
@@ -46,7 +46,7 @@ export default function EditTaskPage(props){
             className="form-control"
             name="description"
             // value={ formData.description}
-            onChange={ handleChange}
+            onChange={ handleChange }
             required
           />
         </div>
