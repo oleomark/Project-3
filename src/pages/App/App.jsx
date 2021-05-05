@@ -9,11 +9,25 @@ import * as taskAPI from '../../utilities/tasks-api';
 import AddTaskPage from '../AddTaskPage/AddTaskPage';
 import EditTaskPage from '../EditTaskPage/EditTaskPage';
 import TaskDetailPage from '../TaskDetailPage/TaskDetailPage';
-
+/**
+ * 
+ * @todos Ask about user being passed and user being found 
+ * 		   Filter the tasklist page by user and date
+ * 		   Add Dates to task list object
+ * 		   I want to render task list COMPONENT by specific date (onchange)
+ - THEN DRILL IT BACK DOWN TO CALENDAR
+* 		PROPLIFT DATESTATE OF CALENDAR TO APP = put that shit in app
+				Handlefunction: whenever date changes, update the task list(useeffect)
+				because my calendar UPDATES THE SETDATE, it will change in app.jsx 
+			WHY IS THE USER PROP DRILL NOT WORKING!!!
+			CALENDAR SETDATE FUNCTION NOT WORKING!!!
+ */
 
 export default function App() {
 	const [tasks, setTasks] = useState([]);
 	const [user, setUser] = useState(getUser());
+	const [date, setDate] = useState(new Date());
+
 	const history = useHistory();
 
 useEffect(() => {
@@ -59,6 +73,8 @@ async function handleDeleteTask(id){
 							tasks={tasks}
 							setTasks={setTasks}
 							handleDeleteTask={handleDeleteTask}
+							date={date}
+							setDate={setDate}
 							/>
 						</Route>
 						<Route exact path='/add'>

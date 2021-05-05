@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const taskSchema = new Schema ({
-    userid: {type: Number, required: true},
+    userId: {type: String},
     title: {type: String, required: true},
     description: {type: String, required: true},
     startDate: {type: Date}, 

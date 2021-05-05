@@ -10,7 +10,9 @@ export function create(task) {
         method: 'POST',
         headers: {'content-type': 'application/json'},
         body: JSON.stringify(task)
-    }).then(res => res.json());
+    }).then(res => {res.json()
+        console.log(res)
+    });
 }
 
 export function update(task) {

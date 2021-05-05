@@ -9,7 +9,7 @@ export default function AddTaskForm(props) {
 
   const [invalidForm, setValidForm] = useState(true);
   const [formData, setFormData] = useState({
-    userid: Number,
+    userId: props.user._id,
     title: '',
     description: '',
     startDate: startDate,
@@ -32,11 +32,20 @@ export default function AddTaskForm(props) {
   const handleChange = (e) => {
     setFormData({
       ...formData, 
-      startDate: startDate,
       [e.target.name]: e.target.value
-    })
-    console.log(e._d);
+    });
+    // console.log(date)
+    // console.log(e);
   }
+
+  const handleDateChange = (date, time) => {
+    const { _d } = date;
+    if (time === 'start') {
+      setFormData({ ...formData, startDate: _d });
+    } else if (time === 'end') {
+      setFormData({ ...formData, endDate: _d });
+    }
+  };
 
   return (
     <>
@@ -68,15 +77,21 @@ export default function AddTaskForm(props) {
         ref={startDateRef}
         name="setStartDate"
         selected={startDate}
-        onChange={date => setStartDate(date._d)}
+        onChange={(date) => handleDateChange(date, 'start')}
         required
         />
         </div>
         <div>
           <label>Select End Date</label>
-        <Datetime />
+        <Datetime 
+        ref={startDateRef}
+        name="setEndDate"
+        selected={endDate}
+        onChange={(date) => handleDateChange(date, 'end')}
+        required
+        />
         </div>
-          <input type="hidden" value={props.user._id}></input>
+          <input type="hidden" value={props.user._id} name="userid"></input>
         <button
           type="submit"
           className="btn"

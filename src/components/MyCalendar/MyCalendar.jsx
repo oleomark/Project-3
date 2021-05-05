@@ -1,25 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
 
-export default function MyCalendar({ setTasks }) {
-  const [date, setDate] = useState(new Date());
-  
-
+export default function MyCalendar({ setTasks, date, setDate }) {
 
   const onChange = date => {
     setDate(date);
+    console.log("Hello")
+    console.log(date)
   };
 
   return (
     <div>
         <Calendar
-        onChange={onChange}
+        onChange={date => onChange(date)}
         value={date}
         />
-        {console.log(date)}
-        {date.toDateString(date)}
+        {/* {console.log(date)}
+        {date.toDateString(date)} */}
         <button>Add Task</button>
     </div>
   )
