@@ -77,7 +77,7 @@ export default function AddTaskForm(props) {
         ref={startDateRef}
         name="setStartDate"
         selected={startDate}
-        value={ formData.startDate._d }
+        // value={ formData.startDate.id }
         onChange={(date) => handleDateChange(date, 'start')}
         required
         />
@@ -88,7 +88,7 @@ export default function AddTaskForm(props) {
         ref={startDateRef}
         name="setEndDate"
         selected={endDate}
-        value={ formData.endDate._d }
+        // value={ formData.endDate.id }
         onChange={(date) => handleDateChange(date, 'end')}
         required
         />
