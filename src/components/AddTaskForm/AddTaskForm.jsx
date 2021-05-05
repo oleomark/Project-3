@@ -12,11 +12,8 @@ export default function AddTaskForm(props) {
     userid: Number,
     title: '',
     description: '',
-<<<<<<< HEAD
-=======
     startDate: startDate,
     endDate: (endDate),
->>>>>>> bf0ab64c0f0c26513fdfa29641114cc81c2050f0
   })
 
   const formRef = useRef();
