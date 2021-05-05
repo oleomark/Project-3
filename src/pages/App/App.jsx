@@ -16,9 +16,6 @@ export default function App() {
 	const [user, setUser] = useState(getUser());
 	const history = useHistory();
 
-	// var today = new Date();
-	// var lastWeek = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7);
-
 useEffect(() => {
 	history.push('/')
 	}, [tasks, history])
@@ -45,6 +42,11 @@ async function handleUpdateTask(updatedTaskData) {
 	setTasks(newTasksArray);
 }
 
+async function handleDeleteTask(id){
+	await taskAPI.deleteOne(id);
+	setTasks(tasks.filter(t => t._id !== id))
+}
+
 
 	return (
 		<main className='App'>
@@ -53,11 +55,16 @@ async function handleUpdateTask(updatedTaskData) {
 					<NavBar user={user} setUser={setUser} />
 					<Switch>
 						<Route exact path='/'>
-							<TaskListPage tasks={tasks}/>
+							<TaskListPage 
+							tasks={tasks}
+							setTasks={setTasks}
+							handleDeleteTask={handleDeleteTask}
+							/>
 						</Route>
 						<Route exact path='/add'>
 							<AddTaskPage
 							handleAddTask={handleAddTask}
+							user={user}
 							/>
 						</Route>
 						<Route exact path='/details'>

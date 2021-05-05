@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function TaskListItem({ task }) {
+function TaskListItem({ task, handleDeleteTask }) {
   return (
     <div>
       <div>
@@ -25,7 +25,7 @@ function TaskListItem({ task }) {
         </Link>
         &nbsp; | &nbsp;
         <button
-          // onClick={() => handleDeleteTask(task._id)}
+          onClick={() => handleDeleteTask(task._id)}
         >
           DELETE
         </button>

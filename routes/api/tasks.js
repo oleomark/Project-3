@@ -6,6 +6,6 @@ router.get('/', tasksCtrl.index);
 router.get('/:id', tasksCtrl.show);
 router.post('/', tasksCtrl.create);
 router.put('/:id', tasksCtrl.update);
-// router.delete('/:id', tasksCtrl.deleteOne);
+router.delete('/:id', tasksCtrl.deleteOne);
 
 module.exports = router;

@@ -1,10 +1,11 @@
 import React from 'react';
 import TaskListItem from '../TaskListItem/TaskListItem';
 
-export default function TaskList({ tasks }) {
+export default function TaskList({ tasks, handleDeleteTask }) {
     const alltasks = tasks.map(task => 
         <TaskListItem
         task={task}
+        handleDeleteTask={handleDeleteTask}
         />
         )
 
