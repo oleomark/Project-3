@@ -4,7 +4,8 @@ import MyCalendar from '../../components/MyCalendar/MyCalendar';
 
 
 
-export default function TaskListPage({ date, setDate, tasks, setTasks, handleDeleteTask }) {
+export default function TaskListPage({ user, date, setDate, tasks, setTasks, handleDeleteTask }) {
+    console.log(user)
     return (
         <>
         <MyCalendar 
@@ -13,6 +14,7 @@ export default function TaskListPage({ date, setDate, tasks, setTasks, handleDel
         setDate={setDate}
         />
         <TaskList
+        user={user}
         tasks={tasks}
         handleDeleteTask={handleDeleteTask}
         />

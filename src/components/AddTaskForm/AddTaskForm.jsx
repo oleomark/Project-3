@@ -13,7 +13,7 @@ export default function AddTaskForm(props) {
     title: '',
     description: '',
     startDate: startDate,
-    endDate: (endDate),
+    endDate: endDate,
   })
 
   const formRef = useRef();
@@ -56,7 +56,7 @@ export default function AddTaskForm(props) {
           <input
             className="form-control"
             name="title"
-            value={ formData.title }
+            // value={ formData.title }
             onChange={handleChange}
             required
           />
@@ -66,7 +66,7 @@ export default function AddTaskForm(props) {
           <input
             className="form-control"
             name="description"
-            value={ formData.description }
+            // value={ formData.description }
             onChange={handleChange}
             required
           />
@@ -77,6 +77,7 @@ export default function AddTaskForm(props) {
         ref={startDateRef}
         name="setStartDate"
         selected={startDate}
+        value={ formData.startDate._d }
         onChange={(date) => handleDateChange(date, 'start')}
         required
         />
@@ -87,6 +88,7 @@ export default function AddTaskForm(props) {
         ref={startDateRef}
         name="setEndDate"
         selected={endDate}
+        value={ formData.endDate._d }
         onChange={(date) => handleDateChange(date, 'end')}
         required
         />
