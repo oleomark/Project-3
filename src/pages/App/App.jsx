@@ -57,12 +57,14 @@ async function handleDeleteTask(id){
 						<Route exact path='/'>
 							<TaskListPage 
 							tasks={tasks}
+							setTasks={setTasks}
 							handleDeleteTask={handleDeleteTask}
 							/>
 						</Route>
 						<Route exact path='/add'>
 							<AddTaskPage
 							handleAddTask={handleAddTask}
+							user={user}
 							/>
 						</Route>
 						<Route exact path='/details'>

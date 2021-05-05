@@ -1,14 +1,24 @@
 import React, { useState, useRef, useEffect } from 'react';
-// import DateTimePicker from 'react-datetime-picker';
+import Datetime from 'react-datetime';
+import "react-datetime/css/react-datetime.css";
 
-export default function AddTaskForm(props){
+
+export default function AddTaskForm(props) {
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
+
   const [invalidForm, setValidForm] = useState(true);
   const [formData, setFormData] = useState({
+    userid: Number,
     title: '',
     description: '',
+    startDate: startDate,
+    endDate: (endDate),
   })
 
   const formRef = useRef();
+  const startDateRef = useRef();
+  console.log(startDateRef)
 
   useEffect(() => {
     formRef.current.checkValidity() ? setValidForm(false) : setValidForm(true);
@@ -21,9 +31,11 @@ export default function AddTaskForm(props){
 
   const handleChange = (e) => {
     setFormData({
-      ...formData,
+      ...formData, 
+      startDate: startDate,
       [e.target.name]: e.target.value
     })
+    console.log(e._d);
   }
 
   return (
@@ -50,23 +62,21 @@ export default function AddTaskForm(props){
             required
           />
         </div>
-        {/* <div>
-        <label>Date (required)</label>
-        <input type="date" id="start" name="trip-start"
-       value="2018-07-22"
-       min="2018-01-01" max="2018-12-31">
-         </input>
+        <div>
+          <label>Select Start Date</label>
+        <Datetime 
+        ref={startDateRef}
+        name="setStartDate"
+        selected={startDate}
+        onChange={date => setStartDate(date._d)}
+        required
+        />
         </div>
         <div>
-        <label>Time </label>
-        <input type="time" id="appt" name="appt"
-       min="09:00" max="18:00" required>
-         </input>
+          <label>Select End Date</label>
+        <Datetime />
         </div>
-        <div>
-          <label>Select Day and Time</label>
-          <DateTimePicker />
-        </div> */}
+          <input type="hidden" value={props.user._id}></input>
         <button
           type="submit"
           className="btn"
