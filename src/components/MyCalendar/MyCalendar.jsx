@@ -13,12 +13,12 @@ export default function MyCalendar({ tasks, date, setDate, setTasks }) {
   };
 
   const onClickDay = (date) => {
-    const filteredTasks = tasks.filter( task => task.startDate === date);
+    const filteredTasks = tasks.filter(task => (new Date(task.startDate)).getDate() == date.getDate());
     setTasks(filteredTasks);
   };
   
-  const dayTasks = new Date( task => task.startDate);
-  console.log(dayTasks);
+  // const dayTasks = new Date( task => task.startDate);
+  // console.log(dayTasks);
   // tasks.filter(task => {
   //   if (task.startDate === (date))
   //   console.log(date);
