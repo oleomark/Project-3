@@ -19,10 +19,6 @@ export default function MyCalendar({ tasks, date, setDate, setTasks }) {
   
   // const dayTasks = new Date( task => task.startDate);
   // console.log(dayTasks);
-  // tasks.filter(task => {
-  //   if (task.startDate === (date))
-  //   console.log(date);
-  // };
 
 
 /* I WANT TO RENDER MY TASK PAGE ON CLICK WITH APPROPRIATE DATE*/

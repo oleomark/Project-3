@@ -3,9 +3,11 @@ import TaskListItem from '../TaskListItem/TaskListItem';
 
 function TaskList({ user, tasks, handleDeleteTask }) {
     const userTasks = tasks.filter( task => {
+        if (task != null)
         return task.userId === user._id 
-    },
-    )
+    });
+    
+    
     console.log(tasks)
     console.log(userTasks)
     console.log(user.id)
