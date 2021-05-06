@@ -6,7 +6,7 @@ export default function TaskDetailPage(props) {
     const {state: {task} } = useLocation()
     // const firstDate = {task.StartDate}
     // firstDate.getFullYear()+'-' + (task.startDate.getMonth()+1) + '-'+task.startDate.getDate();
-
+    
     return (
         <>
             <h1>Task Details</h1>
