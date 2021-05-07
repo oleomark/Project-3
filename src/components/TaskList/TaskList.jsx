@@ -1,7 +1,7 @@
 import React from "react";
 import TaskListItem from "../TaskListItem/TaskListItem";
 
-function TaskList({ user, tasks, handleDeleteTask }) {
+function TaskList({ user, tasks, date, handleDeleteTask }) {
     const userTasks = tasks.filter( task => {
         if (task){
             return task.userId === user._id
@@ -10,9 +10,14 @@ function TaskList({ user, tasks, handleDeleteTask }) {
           }})
 
     const alltasks = userTasks.map((task) => (
-      <TaskListItem task={task} handleDeleteTask={handleDeleteTask} />
+      <TaskListItem 
+      task={task} 
+      tasks={tasks}
+      handleDeleteTask={handleDeleteTask}
+      date={date}
+       />
     ));
-    console.log(alltasks);
+    // console.log(alltasks);
 
     return (
       <div>

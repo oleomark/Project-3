@@ -5,7 +5,6 @@ function TaskListItem({ task, handleDeleteTask }) {
   return (
     <div>
       <div>
-        {/* <h1>{task.userId}</h1> */}
         <h3>{task.title}</h3>
         <Link
           to={{

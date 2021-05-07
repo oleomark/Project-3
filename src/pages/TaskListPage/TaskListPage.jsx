@@ -18,6 +18,7 @@ export default function TaskListPage({ user, date, setDate, tasks, setTasks, han
         user={user}
         tasks={tasks}
         handleDeleteTask={handleDeleteTask}
+        date={date}
         />
         </>
     );

@@ -3,7 +3,7 @@
   --tan-1: #FBF9F6;
   --tan-2: #E7E2DD;
   --tan-3: #E2D9D1;
-  --tan-4: #D3C1AE;
+  --tan-4: #ACD1AF;
   --orange: #F67F00;
   --text-light: #968c84;
   --text-dark: #615954;
@@ -80,7 +80,7 @@ code {
 .form-container {
   padding: 3vmin;
   background-color: var(--tan-1);
-  border: .1vmin solid var(--tan-3);
+  border: .1vmin solid var(--tan-2);
   border-radius: 1vmin;
 }
 

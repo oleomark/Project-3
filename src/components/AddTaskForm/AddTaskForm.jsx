@@ -30,7 +30,6 @@ export default function AddTaskForm(props) {
   const handleSubmit = (e) => {
     e.preventDefault()
     props.handleAddTask(formData);
-    // history.push('/')
     window.location.href="/";
   }
 
