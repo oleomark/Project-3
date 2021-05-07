@@ -5,7 +5,14 @@ MyDailies is a simple task tracker app with a calendar component for users to tr
 ## View the app <a href=https://my-dailies.herokuapp.com/>here!</a>
 
 ## Screenshots
+LOGIN PAGE
 <img src=https://i.imgur.com/7f32eqJ.png>
+ERD 
+<img src=https://i.imgur.com/yLpS4JV.png>
+WIREFRAMES
+<img src=https://i.imgur.com/2GuWjCy.png>
+<img src=https://i.imgur.com/s3RtDoX.png>
+<img src=https://i.imgur.com/fyIw2H1.png>
 
 ## Technologies Used
 - Mongoose
