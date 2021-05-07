@@ -11,7 +11,6 @@ import EditTaskPage from '../EditTaskPage/EditTaskPage';
 import TaskDetailPage from '../TaskDetailPage/TaskDetailPage';
 
 
-
 export default function App() {
 	const [tasks, setTasks] = useState([]);
 	const [user, setUser] = useState(getUser());
