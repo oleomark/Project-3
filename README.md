@@ -1,8 +1,8 @@
-# Getting Started with Create React App
+# MyDailies 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+MyDailies is a simple task tracker app with a calendar component for users to track their tasks on a daily to weekly basis. Users are able to create task reminders with set dates and times and can view their tasks by a day by day basis or altogether.
 
-## Available Scripts
+## Checkout the app <a href=https://my-dailies.herokuapp.com/>here!</a>
 
 In the project directory, you can run:
 
