@@ -9,27 +9,6 @@ function TaskList({ user, tasks, handleDeleteTask }) {
              return false
           }})
 
-        //   const userTasks = tasks.filter( task => {
-        //         return task.userId === user._id
-//   useEffect(() => {
-//     const userTasks = tasks.filter(
-//       (task) => {
-//         if (task) {
-//           return task.userId === user._id;
-//         } else {
-//           return false;
-//         }
-//       },
-//       [tasks]
-//     )
-
-    //after tasklist being rendered then call usertasks//
-    // bring user tasks to app, then just pass it down //
-
-    // console.log(tasks);
-    // console.log(userTasks);
-    // console.log(user.id);
-
     const alltasks = userTasks.map((task) => (
       <TaskListItem task={task} handleDeleteTask={handleDeleteTask} />
     ));

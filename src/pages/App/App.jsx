@@ -15,7 +15,7 @@ export default function App() {
 	const [tasks, setTasks] = useState([]);
 	const [user, setUser] = useState(getUser());
 	const [date, setDate] = useState(new Date());
-	const [defaultState, setDefaultDate] = useState([]);
+	const [defaultState, setDefaultState] = useState([]);
 
 	const history = useHistory();
 
@@ -27,8 +27,9 @@ useEffect(() => {
 	async function getTasks(){
 		const tasks = await taskAPI.getAll();
 		setTasks(tasks);
-		setDefaultDate(tasks);
+		setDefaultState(tasks);
 	}
+	// setTimeout(() => getTasks(), 1000)
 	getTasks();
 }, [])
 

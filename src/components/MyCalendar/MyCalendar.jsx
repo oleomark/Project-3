@@ -2,6 +2,7 @@ import React from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 // import { useEffect } from "react";
+import {getAll} from '../../utilities/tasks-api';
 
 export default function MyCalendar({ tasks, date, setDate, setTasks, defaultState }) {
 
@@ -15,7 +16,12 @@ export default function MyCalendar({ tasks, date, setDate, setTasks, defaultStat
   };
 
   const handleClick = () => {
-    setTasks(defaultState);
+    async function getTasks(){
+      const tasks = await getAll();
+      setTasks(tasks);
+      setDate(new Date());
+    }
+    getTasks();
   }
   
   return (
