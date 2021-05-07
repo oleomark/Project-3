@@ -34,6 +34,10 @@ app.listen(port, function () {
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/tasks', require('./routes/api/tasks'));
 
+const ensureLoggedIn = require('./config/ensureLoggedIn');
+app.use('/api/tasks', ensureLoggedIn, require('./routes/api/tasks'));
+
+
 // The following "catch all" route (note the *) is necessary
 app.get('/*', function (req, res) {
 	res.sendFile(path.join(__dirname, 'build', 'index.html'));
