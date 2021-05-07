@@ -12,9 +12,9 @@ export default function NavBar({ user, setUser }) {
 
 	return (
 		<nav>
-			<Link to='/add'>Add Task</Link>
+			<Link to='/add'>ADD Task</Link>
 			&nbsp; | &nbsp;
-			<Link to='/'>My Tasks</Link>
+			<Link to='/'>ALL Tasks</Link>
 			&nbsp; | &nbsp;
 			<Link to='/calendars'>My Calendars</Link>
 			&nbsp; | &nbsp;

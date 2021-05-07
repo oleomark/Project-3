@@ -1,57 +1,32 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-// import TaskList from '../TaskList/TaskList';
+// import { useEffect } from "react";
 
-
-export default function MyCalendar({ tasks, date, setDate, setTasks }) {
+export default function MyCalendar({ tasks, date, setDate, setTasks, defaultState }) {
 
   const onChange = date => {
     setDate(date);
-    // console.log("Hello")
-    // console.log(date)
   };
 
   const onClickDay = (date) => {
     const filteredTasks = tasks.filter(task => (new Date(task.startDate)).getDate() == date.getDate());
     setTasks(filteredTasks);
   };
+
+  const handleClick = () => {
+    setTasks(defaultState);
+  }
   
-  // const dayTasks = new Date( task => task.startDate);
-  // console.log(dayTasks);
-
-
-/* I WANT TO RENDER MY TASK PAGE ON CLICK WITH APPROPRIATE DATE*/
-  // const [showTask, setShowTasks] = useState('No Tasks Available')
-  // const handleChange = (e) => {
-  //   setShowTasks 
-    
-  // }
-//   const onClickDay = (date, tasks) => {
-//     // const dayTasks = tasks.filter( task => {
-//       return tasks.startDate === date  
-//   // })
-// };
-
-    // console.log(date);
-    // alert('Selected Date!')
-    // if (date === 'date') {
-    // return alert('Yes');
-    // if (time === 'start') {
-    //   setFormData({ ...formData, startDate: _d });
-    // } else if (time === 'end') {
-    //   setFormData({ ...formData, endDate: _d });
-    // }
-  
-
   return (
     <div>
+      	<button type ="button" onClick={() => handleClick()}>ALL TASKS</button>
         <Calendar
         onChange={date => onChange(date)}
         value={date}
+        setTasks={setTasks}
         onClickDay={e => onClickDay(e)}
         />
-        <button>Add Task</button>
     </div>
   )
 }

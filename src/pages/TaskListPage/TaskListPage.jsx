@@ -3,10 +3,7 @@ import TaskList from '../../components/TaskList/TaskList';
 import MyCalendar from '../../components/MyCalendar/MyCalendar';
 
 
-export default function TaskListPage({ user, date, setDate, tasks, setTasks, handleDeleteTask }) {
-    // const onClickDay = (date) => alert('Clicked day')
-    console.log(user)
-    
+export default function TaskListPage({ user, date, setDate, tasks, setTasks, handleDeleteTask, defaultState }) {
     return (
         <>
         <MyCalendar 
@@ -14,7 +11,8 @@ export default function TaskListPage({ user, date, setDate, tasks, setTasks, han
         date={date}
         setDate={setDate}
         tasks={tasks}
-        // onClickDay={onClickDay}
+        defaultState={defaultState}
+
         />
         <TaskList
         user={user}

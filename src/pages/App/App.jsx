@@ -15,21 +15,22 @@ export default function App() {
 	const [tasks, setTasks] = useState([]);
 	const [user, setUser] = useState(getUser());
 	const [date, setDate] = useState(new Date());
+	const [defaultState, setDefaultDate] = useState([]);
 
 	const history = useHistory();
 
 useEffect(() => {
 	history.push('/')
-	}, [tasks, history])
+	}, [tasks, history, date, defaultState])
 
 useEffect(() => {
 	async function getTasks(){
 		const tasks = await taskAPI.getAll();
 		setTasks(tasks);
+		setDefaultDate(tasks);
 	}
 	getTasks();
 }, [])
-
 
 async function handleAddTask(newTaskData) {
 	const newTask = await taskAPI.create(newTaskData);
@@ -64,6 +65,7 @@ async function handleDeleteTask(id){
 							handleDeleteTask={handleDeleteTask}
 							date={date}
 							setDate={setDate}
+							defaultState={defaultState}
 							/>
 						</Route>
 						<Route exact path='/add'>

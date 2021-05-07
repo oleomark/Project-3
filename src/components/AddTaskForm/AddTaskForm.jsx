@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Datetime from 'react-datetime';
 import "react-datetime/css/react-datetime.css";
+import { useHistory } from 'react-router-dom';
 
 
 export default function AddTaskForm(props) {
@@ -18,7 +19,9 @@ export default function AddTaskForm(props) {
 
   const formRef = useRef();
   const startDateRef = useRef();
-  console.log(startDateRef)
+  // console.log(startDateRef)
+
+  const history = useHistory();
 
   useEffect(() => {
     formRef.current.checkValidity() ? setValidForm(false) : setValidForm(true);
@@ -27,6 +30,7 @@ export default function AddTaskForm(props) {
   const handleSubmit = (e) => {
     e.preventDefault()
     props.handleAddTask(formData);
+    history.push('/')
   }
 
   const handleChange = (e) => {
@@ -34,8 +38,6 @@ export default function AddTaskForm(props) {
       ...formData, 
       [e.target.name]: e.target.value
     });
-    // console.log(date)
-    // console.log(e);
   }
 
   const handleDateChange = (date, time) => {
