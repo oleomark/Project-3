@@ -31,6 +31,7 @@ export function update(task) {
 export function deleteOne(id) {
     const token = getToken();
     return fetch(`${BASE_URL}/${id}`, {
+        method: 'DELETE',
         headers: {'content-type': 'application/json',
         "Authorization": `Bearer ${token}`, },
     }).then(res => res.json ());

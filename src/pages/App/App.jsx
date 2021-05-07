@@ -29,13 +29,12 @@ useEffect(() => {
 		setTasks(tasks);
 		setDefaultState(tasks);
 	}
-	// setTimeout(() => getTasks(), 1000)
 	getTasks();
 }, [])
 
 async function handleAddTask(newTaskData) {
 	const newTask = await taskAPI.create(newTaskData);
-	setTasks([...tasks, newTask])
+	setTasks([...tasks, newTask]);
 }
 
 async function handleUpdateTask(updatedTaskData) {

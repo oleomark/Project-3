@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react';
 import {Link, useLocation} from 'react-router-dom';
 
-export default function EditTaskPage({props}){
+export default function EditTaskPage(props){
 
   const location = useLocation()
 
@@ -45,7 +45,6 @@ export default function EditTaskPage({props}){
           <input
             className="form-control"
             name="description"
-            // value={ formData.description}
             onChange={ handleChange }
             required
           />

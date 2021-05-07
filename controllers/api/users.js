@@ -6,6 +6,7 @@ module.exports = {
 	create,
 	login,
 	checkToken,
+	index,
 };
 
 /*--- Helper Functions ---*/
@@ -16,6 +17,11 @@ function createJWT(user) {
 		process.env.SECRET,
 		{ expiresIn: '24h' }
 	);
+}
+
+async function index(req, res) {
+	const user = await User.find({});
+	res.status(200).json(user);
 }
 
 async function create(req, res) {
